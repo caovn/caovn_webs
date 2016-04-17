@@ -1,0 +1,29 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script> 
+
+      <!-- 
+         This selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.
+         
+       -->
+ <script>
+         $(document).ready(function(){
+            $("p").find("span").end().css("border", "2px red solid");
+         });
+      </script>
+      
+      <style>
+         p{ 
+            margin:10px; 
+            padding:10px; 
+         }
+      </style>
+   </head>
+   
+   <body>
+      <p><span>Hello</span>, how are you?</p>
+   </body>
+   
+</html>

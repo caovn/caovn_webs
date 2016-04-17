@@ -1,0 +1,33 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script> 
+
+       
+<!-- all <tag> relative wiil be effect: just return the first selected elemnt -->
+<script type = "text/javascript" language = "javascript">
+         $(document).ready(function(){
+            $("p").offsetParent().addClass('hilight');
+         });
+      </script>
+      
+      <style>
+         .hilight { background:yellow; }
+      </style>
+   </head>
+   
+   <body>
+   
+      <scan>Top Element</scan>
+      
+      <div style = "position:relative;">
+         <div>sibling<div>child</div></div>
+         <p>sibling</p>
+         <scan>sibling</scan>
+      <div>
+      
+   </body>
+   
+</html>
+

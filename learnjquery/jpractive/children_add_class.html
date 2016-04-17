@@ -1,0 +1,32 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script> 
+      
+      
+<script>
+         $(document).ready(function(){
+            $("div").children(".selected").addClass("blue");
+            // $("div").children().addClass("blue");
+         });
+      </script>
+      
+      <style>
+         .blue { color:blue; }
+      </style>
+   </head>
+   
+   <body>
+   
+      <div>
+         <span>Hello</span>
+         <p class = "selected">Hello Again</p>
+         <div class = "selected">And Again</div>
+         <p class = "biggest">And One Last Time</p>
+      </div>
+      
+   </body>
+   
+</html>
+

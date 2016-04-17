@@ -1,0 +1,29 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script>		
+      <script>
+         $(document).ready(function(){
+            // $("div").find("p").andSelf().addClass("border"); // and seft: this div
+            $("div").find("p").addClass("border");
+         });
+      </script>
+		
+      <style>
+         p, div { margin:5px; padding:5px; }
+         .border { border: 2px solid red; }
+         .background { background:yellow; }
+      </style>	
+   </head>
+	
+   <body>
+	
+      <div>
+         <p>First Paragraph</p>
+         <p>Second Paragraph</p>
+      </div>
+		
+   </body>
+	
+</html>

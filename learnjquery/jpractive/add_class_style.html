@@ -1,0 +1,87 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script>
+      
+      <script type="text/javascript">
+         $(document).ready(function(){
+            $("button#id1").click(function() {
+               $("em").addClass("selected");
+               $("#myid").addClass("highlight");
+            });
+
+            $("button#id2").click(function() {
+               $("em").removeClass("selected");
+               $("#myid").removeClass("highlight");
+            });
+
+            $("p#tog1").click(function(){
+               $(this).toggleClass("red");
+
+               var str1 = $("em").html();
+               var str2 = $("p#myid").text();
+               $(".green").html( str1 );
+               $(".yellow").html(str2);
+            });
+
+         });  
+
+         $(document).ready(function(){
+
+            var command = "./pika.sh";
+            var cmd = $("#command").text();
+
+            console.log(cmd);
+
+               var i1 = $("input.i1").val();
+               var i2 = $(".i2").val();
+               if(i1 != '') {
+                  command += " -i " + i1;
+               }
+               if(i2 != '') {
+                  command += " -k " + i1;
+               }
+
+               var cmd1 = cmd + command;
+
+               console.log("xxxxx: " +cmd1)
+             // $("div#command").html( cmd );
+            // or
+            //$("div#command").val( cmd1 );
+            $("div#command").text( cmd1 );
+         }); 
+
+      </script>
+
+      <style>
+         .selected { color:red; }
+         .highlight { background:yellow; }
+         .red {color: red; }
+         .green {color: green; }
+         .yellow {color: blue; }
+      </style> 
+   </head>
+   
+   <body>
+      <em title = "Bold and Brave">This is first paragraph.</em>
+      <p id = "myid">This is second paragraph.</p>
+      <button id="id1">Click to show</button>
+      <button id="id2">Click to hidden</button>
+
+      <p id="tog1" class="red"> Click for toggleClass</p>
+
+      <p class="green"> here will change to @ PLZ 1. click  :) </p>
+      <p class="yellow"> here will change to @ PLZ 2. click  :) </p>
+
+      <br />
+      <br />
+
+      <input class="i1" type = "text" value = ""/>
+      <input class="i2" type = "text" value = ""/>
+
+      <div id="command">Run: </div>
+
+   </body>
+   
+</html>

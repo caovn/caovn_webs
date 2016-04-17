@@ -1,0 +1,21 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script> 
+      
+      <script>
+         $(document).ready(function(){
+            var $content = $("iframe").contents();
+            console.log(content);
+            $content.find("body").append("I'm in an iframe!");
+         });
+      </script>
+   </head>
+   
+   <body>
+      <iframe src = "index.html" width = "300" height = "100"></iframe>
+   </body>
+   
+</html>
+

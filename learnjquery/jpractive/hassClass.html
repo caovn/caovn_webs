@@ -1,0 +1,36 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "../jquery/jquery-2.1.3.min.js"></script>
+      
+      <script type="text/javascript">
+         $(document).ready(function(){
+            $("button").click(function() {
+               $("#ret1").text(( $("p#pid1").hasClass("red")));
+               $("#ret2").text(( $("p#pid2").hasClass("green")));
+            });
+         });   
+
+      </script>
+
+      <style>
+         .red { color:red; }
+         .greeen { color: green; }
+      </style> 
+   </head>
+   
+   <body>
+      <p class="red" id="pid1">this is first paragrap.</p>
+      <p class="green" id="pid2">that is second paragrap.</p>
+      <br/>
+      <button>Click</button>
+      <br />
+
+      <div id="ret1"></div>
+      <div id="ret2"></div>
+
+   </body>
+   
+</html>

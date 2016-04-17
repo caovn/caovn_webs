@@ -1,0 +1,28 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src = "../jquery/jquery-2.2.3.min.js"></script> 
+
+       
+     <script type = "text/javascript" language = "javascript">
+         $(document).ready(function(){
+            //$("p").prev(".selected").addClass("hilight"); // specific if not, this prev of this tag, ex:
+            $("p.selected").prev("").addClass("hilight");
+         });
+      </script>
+      
+      <style>
+         .hilight { background:yellow; }
+      </style>
+   </head>
+   
+   <body>
+   
+      <div><span>Hello</span></div>
+      <p class = "selected">Hello Again</p>
+      <p>And Again</p>
+      
+   </body>
+   
+</html>

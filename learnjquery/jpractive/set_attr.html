@@ -1,0 +1,73 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+            $("#myimg").click(function(){
+                $("#myimg").attr("src", "../img/cavoi.jpg");  
+            });
+         });
+      </script>
+
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+            $("table").attr("border", function(index) {
+               return "4px";
+            });
+         });
+      </script>   
+
+      <script type="text/javascript">
+         $(document).ready(function() {
+
+            $(".removebttn").click(function(){
+               $("table").removeAttr("border");
+               $(".removebttn").attr("text","Click to show border");
+            });
+
+            // $("#showbttn").click(function(){
+            //    $("table").attr("border", function(index) {
+            //    return "4px";
+            //    });
+            // });
+
+            $("#email").blur(function(){
+               var email = $("input#email").val();
+               if (email != "caovn@gcs-vn.com")
+               {
+                  $("div#noteEmail").text("Please enter proper your email.");
+               }
+            });
+            $("#email").click(function(){
+                  $("div#noteEmail").text("");
+            });
+
+         });
+      </script>
+
+   </head>
+	
+   <body>
+      <div>
+         <img id = "myimg" src = "../img/nobita.jpg" alt = "Sample image." title="what is this?" />
+      </div>
+      <table>
+         <tr><td>This is first table</td></tr>
+      </table>
+      <table>
+         <tr><td>This is second table</td></tr>
+      </table>
+      <table>
+         <tr><td>This is third table</td></tr>
+      </table>
+      <button class="removebttn" id="showbttn">Click to remove all border</button>
+      <br />
+
+      <label>Email: </label><input type="text" title="enter your email" id="email"><div id="noteEmail"></div>
+   </body>
+	
+</html>
