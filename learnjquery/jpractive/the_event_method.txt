@@ -1,0 +1,15 @@
+preventsDefault()
+	Prevents the browser from executing the default action
+
+
+isDefaultPrevented()
+	Returns whether event.preventDefault() was ever called on this event object	
+
+
+stopPropagation()
+
+	Stops the bubbling of an event to parent elements, preventing any parent handlers from being notified of the event.
+
+hover( over, out )
+
+	Simulates hovering for example moving the mouse on, and off, an object.
