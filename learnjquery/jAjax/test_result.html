@@ -1,0 +1,115 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "../jquery/jquery-2.2.3.min.js"></script>
+      
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+
+            $("#driver1").click(function(event){
+               $('#stage').load('result.html');
+            });
+         
+            $("#driver11").click(function(event){
+               $.ajax( {
+                  url:'result.html',
+                  success:function(data) {
+                     $('#stage').html(data);
+                  }
+               });
+            });
+
+            $("#driver12").click(function(event){
+               // Do global setting.
+               $.ajaxSetup({
+                  url: "result.html"
+               });
+               
+               $.ajax( {
+                  success:function(data) {
+                     $('#stage').html(data);
+                  }
+               });
+            });
+
+
+            $("#driver2").click(function(event){
+            
+               $.getJSON('result.json', function(a) {
+                  $('#stage').html('<p> Name: ' + a.name + '</p>');
+                  $('#stage').append('<p>Age : ' + a.age+ '</p>');
+                  $('#stage').append('<p> Sex: ' + a.sex+ '</p>');
+               });
+            });
+
+            $("#driver21").click(function(event){
+               $.get( 
+                  "result.php",
+                  { name: "Zara" },
+                  function(data) {
+                     $('#stage').html(data);
+                  }
+               );
+            });
+
+            $("#driver22").click(function(event){
+            
+               $.post( 
+                  "result.php",
+                  { name: "Zara 22" },
+                  function(data) {
+                     $('#stage').html(data);
+                  }
+               );
+               
+            });
+
+            $("#driver3").click(function(event){
+                  var name = $("#name").val();
+                  $("#caovn1").load('result.php', {"name":name} );
+                  $(".caovn").hide();
+               });
+
+
+            $("#driverjs").click(function(event){
+               $.getScript('result.js', function(jd) {
+                  // Call custom function defined in script
+                  CheckJS();
+               });
+            });
+
+         });
+      </script>
+   </head>
+   
+   <body>
+   
+      <p>Click on the button to load result.html file </p>
+      
+      <div id = "stage" style = "background-color:cc0;">
+         STAGE
+      </div>
+      
+      <input type = "button" id = "driver1" value = "Load Data 1" />
+      <input type = "button" id = "driver11" value = "Load Data 1.1" />
+      <input type = "button" id = "driver12" value = "Load Data 1.2" /><br />
+
+      
+      <input type = "button" id = "driver2" value = "Load Data 2" /> 
+      <input type = "button" id = "driver21" value = "Load Data 21: Zara" />
+      <input type = "button" id = "driver22" value = "Load Data 22: Zara" /> 
+
+      <p class="caovn" >Enter your name and click on the button: 3</p>
+      <p id="caovn1"></p>
+      <input type = "input" id = "name" size = "40" /><br />
+      <input type = "button" id = "driver3" value = "Load Data 3" />
+
+      <br />
+      <input type = "button" id = "driverjs" value = "Load Data from .js file" />
+
+      
+   </body>
+   
+</html>
